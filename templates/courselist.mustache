@@ -35,19 +35,25 @@
                     </a>
                 {{/ isediting }}
             </div>
-            <div class="col-sm-8 span8">
-                <strong><a {{^ visible }}class="dimmed"{{/ visible }} href="{{ link }}">{{ fullname }}</a></strong><br />
-                <small>{{ categories }}</small>
-            </div>
-            {{# hasoverviews }}
-                <div class="col-sm-3 span3">
-                    {{# overviews }}
-                         <span class="overview-icon" data-id="#{{ overviewid }}">
-                             {{{ icon }}}
-                         </span>
-                    {{/ overviews }}
+            <div class="col-sm-11">
+                <div class="col-xs-12">
+                    <div class="col-sm-8 span8">
+                        <strong><a {{^ visible }}class="dimmed"{{/ visible }} href="{{ link }}">{{ fullname }}</a></strong>
+                    </div>
+                    {{# hasoverviews }}
+                        <div class="col-sm-4 span4">
+                            {{# overviews }}
+                                 <span class="overview-icon" data-id="#{{ overviewid }}">
+                                     {{{ icon }}}
+                                 </span>
+                            {{/ overviews }}
+                        </div>
+                    {{/ hasoverviews }}
                 </div>
-            {{/ hasoverviews }}
+                <div class="col-xs-12">
+                    <small>{{ categories }}</small>
+                </div>
+            </div>
         </div>
      {{/ data }}
      {{^ data }}

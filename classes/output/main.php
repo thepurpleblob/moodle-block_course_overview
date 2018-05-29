@@ -76,7 +76,7 @@ class main implements renderable, templatable {
      * @return array of courses
      */
     private function process_tab($output, $favtab, $tab) {
-
+        
         // Add extra info (and make zero indexed).
         $courselist = [];
         foreach ($tab->sortedcourses as $course) {
@@ -90,7 +90,7 @@ class main implements renderable, templatable {
                 $course->favouritelink = new \moodle_url('/my', array('favourite' => $course->id));
                 $course->favouriteicon = 'fa-star-o';
                 $course->favouritealt = get_string('makefavourite', 'block_course_overview');
-            }
+            }            
             if (!empty($tab->overviews[$course->id])) {
                 $course->hasoverviews = true;
                 $overviews = array();

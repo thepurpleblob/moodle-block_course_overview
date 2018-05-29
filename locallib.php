@@ -42,11 +42,16 @@ define('BLOCKS_COURSE_OVERVIEW_REORDER_ID', '3');
 function block_course_overview_get_overviews($courses) {
     global $CFG;
 
+//    var_dump($courses);
+    
     // Tab may not have any courses.
     if (!$courses) {
         return array();
     }
 
+    /**
+     * TODO: change deprecated function
+     */
     // Disable debugging mode because all course modules show debugging message in their print_overview.
     $debugmode = $CFG->debug;
     $CFG->debug ^= E_DEPRECATED;
@@ -163,14 +168,11 @@ function block_course_overview_update_sortorder($sortorder) {
 }
 
 /**
- * Return sorted list of user courses
- *
- * @param bool $favourites tab selected
- * @param bool $keepfavourites setting, show favs in course tab
- * @param array $exlude list of courses not to include (i.e. favs in courses list)A
- * @return array list of sorted courses and count of courses.
+ * Get all courses and sort order
+ * @global type $USER
+ * @return type
  */
-function block_course_overview_get_sorted_courses($favourites, $keepfavourites = false, $exclude = []) {
+function block_course_overview_get_all_courses(){
     global $USER;
 
     // Get courses in order.
@@ -198,18 +200,23 @@ function block_course_overview_get_sorted_courses($favourites, $keepfavourites =
             $courses[$c->id]->lastaccess = 0;
         }
     }
+    
+    return array(
+        'courses' => $courses,
+        'sortorder' => $sortorder
+    );
+    
+}
 
-    // Get remote courses.
-    $remotecourses = array();
-    if (is_enabled_auth('mnet')) {
-        $remotecourses = get_my_remotecourses();
-    }
-    // Remote courses will have -ve remoteid as key, so it can be differentiated from normal courses.
-    foreach ($remotecourses as $id => $val) {
-        $remoteid = $val->remoteid * -1;
-        $val->id = $remoteid;
-        $courses[$remoteid] = $val;
-    }
+/**
+ * Return sorted list of user courses
+ *
+ * @param bool $favourites tab selected
+ * @param bool $keepfavourites setting, show favs in course tab
+ * @param array $exlude list of courses not to include (i.e. favs in courses list)A
+ * @return array list of sorted courses and count of courses.
+ */
+function block_course_overview_get_sorted_courses($courses, $sortorder, $favourites, $keepfavourites = false, $exclude = []) {
 
     if ($favourites) {
         $order = block_course_overview_get_favourites();
@@ -255,14 +262,7 @@ function block_course_overview_get_sorted_courses($favourites, $keepfavourites =
         }
     }
 
-    // From list extract site courses for overview.
-    $sitecourses = array();
-    foreach ($sortedcourses as $key => $course) {
-        if ($course->id > 0) {
-            $sitecourses[$key] = $course;
-        }
-    }
-    return array($sortedcourses, $sitecourses, count($sortedcourses));
+    return array($sortedcourses, count($sortedcourses));
 }
 
 /**
