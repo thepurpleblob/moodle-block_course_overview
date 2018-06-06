@@ -36,10 +36,15 @@
                 {{/ isediting }}
             </div>
             <div class="col-sm-11">
-                <div class="col-md-8 span8">
-                    <strong><a {{^ visible }}class="dimmed"{{/ visible }} href="{{ link }}">{{ fullname }}</a></strong>
-                </div>
+                {{^ hasoverviews }}
+                    <div class="col-md-12 span12">
+                        <strong><a {{^ visible }}class="dimmed"{{/ visible }} href="{{ link }}">{{ fullname }}</a></strong>
+                    </div>
+                {{/ hasoverviews }}
                 {{# hasoverviews }}
+                    <div class="col-md-8 span8">
+                        <strong><a {{^ visible }}class="dimmed"{{/ visible }} href="{{ link }}">{{ fullname }}</a></strong>
+                    </div>
                     <div class="col-md-4 span4">
                         {{# overviews }}
                              <span class="overview-icon" data-id="#{{ overviewid }}">
