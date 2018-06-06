@@ -45,7 +45,7 @@ $string['movecoursehere'] = 'Move course here';
 $string['movetofirst'] = 'Move {$a} course to top';
 $string['moveafterhere'] = 'Move {$a->movingcoursename} course after {$a->currentcoursename}';
 $string['movingcourse'] = 'You are moving: {$a->fullname} ({$a->cancellink})';
-$string['nocourses'] = 'There are no courses to show';
+$string['nocourses'] = 'There are no courses in you favourites. <br>Go in courses tab and click on the star icon <i class="icon fa fa-fw fa-star-o " title="Make favourite"></i> to select your favourite courses.';
 $string['none'] = 'None';
 $string['numtodisplay'] = 'Number of courses to display: ';
 $string['onlyparentname'] = 'Parent category only';
