@@ -57,6 +57,12 @@ div.courseovbox {
     margin-left: -15px !important;
 }
 
+div.courseovbox.ui-sortable-handle{
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
 .course-overview-dialog .ui-dialog-titlebar button{
     background-color: #fff;
     background-image:none;

@@ -42,8 +42,6 @@ define('BLOCKS_COURSE_OVERVIEW_REORDER_ID', '3');
 function block_course_overview_get_overviews($courses) {
     global $CFG;
 
-//    var_dump($courses);
-    
     // Tab may not have any courses.
     if (!$courses) {
         return array();
@@ -68,6 +66,7 @@ function block_course_overview_get_overviews($courses) {
         }
         foreach ($batches as $courses) {
             foreach ($modules as $fname) {
+//                var_dump($fname);
                 $fname($courses, $htmlarray);
             }
         }
@@ -217,7 +216,7 @@ function block_course_overview_get_all_courses(){
  * @return array list of sorted courses and count of courses.
  */
 function block_course_overview_get_sorted_courses($courses, $sortorder, $favourites, $keepfavourites = false, $exclude = []) {
-
+    
     if ($favourites) {
         $order = block_course_overview_get_favourites();
     } else {
@@ -232,14 +231,28 @@ function block_course_overview_get_sorted_courses($courses, $sortorder, $favouri
     } else {
         $counter = 0;
 
-        // Get courses in sort order into list.
-        foreach ($order as $key => $cid) {
+        if($sortorder == BLOCKS_COURSE_OVERVIEW_REORDER_NONE){
+            // Get courses in sort order into list.
+            foreach ($order as $key => $cid) {
 
-            // Make sure user is still enroled.
-            if (isset($courses[$cid])) {
-                $sortedcourses[$cid] = $courses[$cid];
-                $counter++;
+                // Make sure user is still enroled.
+                if (isset($courses[$cid])) {
+                    $sortedcourses[$cid] = $courses[$cid];
+                    $counter++;
+                }
             }
+        } else{
+            
+            // Get courses without sort order into list.
+            foreach ($courses as $c) {
+                foreach ($order as $key => $cid) {
+                    if($c->id == $cid){
+                        $sortedcourses[$cid] = $courses[$cid];
+                        $counter++;
+                    }
+                }
+            }
+            
         }
 
         // Append unsorted courses if limit allows & not favourites.
@@ -261,7 +274,7 @@ function block_course_overview_get_sorted_courses($courses, $sortorder, $favouri
             }
         }
     }
-
+    
     return array($sortedcourses, count($sortedcourses));
 }
 
