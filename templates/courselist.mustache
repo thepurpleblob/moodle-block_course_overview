@@ -60,8 +60,15 @@
         </div>
      {{/ data }}
      {{^ data }}
-         <div class="alert alert-warning">
-             {{# str }}nocourses, block_course_overview{{/ str }}
-         </div>
+        {{^ isFavouritesTab }}
+            <div class="alert alert-warning">
+                {{# str }}nocourses, block_course_overview{{/ str }}
+            </div>
+        {{/ isFavouritesTab }}
+        {{# isFavouritesTab }}
+            <div class="alert alert-warning">
+                {{# str }}nocoursesinfavourites, block_course_overview{{/ str }}
+            </div>
+        {{/ isFavouritesTab }}
      {{/ data }}
 </div>

@@ -183,11 +183,13 @@ class main implements renderable, templatable {
         $tabs = array(
             0 => (object) [
                 'tab' => 'favourites',
+                'isFavouritesTab' => true,
                 'show' => $this->selectedtab == 'favourites' ? 'show active' : '',
                 'data' => $this->process_tab($output, true, $this->tabs['favourites']),
             ],
             1 => (object) [
                 'tab' => 'courses',
+                'isFavouritesTab' => false,
                 'show' => $this->selectedtab == 'courses' ? 'show active' : '',
                 'data' => $this->process_tab($output, false, $this->tabs['courses']),
                 ],
