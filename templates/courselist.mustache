@@ -24,7 +24,12 @@
 }}
 <div class="course-list container-fluid">
     {{# data }}
+        {{^ hasoverviews }}
         <div id="course-{{ id }}" class="row courseovbox lead">
+        {{/ hasoverviews }}
+        {{# hasoverviews }}
+        <div id="course-{{ id }}" style="background-color: {{coursewithoverviewscolor}};" class="row courseovbox lead">
+        {{/ hasoverviews }}
             <div class="col-sm-1 span1">
                 {{# isediting }}
                     <i class="icon fa fa-fw fa-arrows cursor" title="{{# str }}movecourse, block_course_overview, {{ fullname }}{{/ str }}"></i>

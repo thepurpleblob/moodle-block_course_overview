@@ -201,6 +201,7 @@ class main implements renderable, templatable {
             'help' => $output->help_icon('help', 'block_course_overview', true),
             'viewingfavourites' => $this->selectedtab == 'favourites',
             'select' => $this->reorder_select($output),
+            'coursewithoverviewscolor' => $this->config->coursewithoverviewscolor
         ];
     }
 

@@ -107,8 +107,13 @@ class block_course_overview extends block_base {
         $ctab->tab = 'courses';
         list($ctab->sortedcourses, $ctab->totalcourses)
             = block_course_overview_get_sorted_courses($courses_sortorder['courses'], $courses_sortorder['sortorder'], false, $config->keepfavourites, array_keys($ftab->sortedcourses));
-//        $ctab->overviews = block_course_overview_get_overviews($ctab->sortedcourses);
-        $ctab->overviews = $ftab->overviews;
+        /**
+         * Show icons in course tab
+         */
+        if(isset($config->showupdatesincourselist) && intval($config->showupdatesincourselist))
+            $ctab->overviews = block_course_overview_get_overviews($ctab->sortedcourses);
+        else
+            $ctab->overviews = $ftab->overviews;
         $tabs = array(
             'favourites' => $ftab,
             'courses' => $ctab,
@@ -125,7 +130,6 @@ class block_course_overview extends block_base {
 //        }
 
         $renderer = $this->page->get_renderer('block_course_overview');
-        
         // Render block.
         $main = new block_course_overview\output\main($config, $tabs, $isediting, $tab, $sortorder, $favourites);
         $this->content->text .= $renderer->render($main);

@@ -44,4 +44,15 @@ if ($ADMIN->fulltree) {
         new lang_string('keepfavouritesdesc', 'block_course_overview'),
         0
     ));
+    $settings->add(new admin_setting_configcheckbox(
+        'block_course_overview/showupdatesincourselist',
+        new lang_string('showupdatesincourselist', 'block_course_overview'),
+        new lang_string('showupdatesincourselistdesc', 'block_course_overview'),
+        0
+    ));
+    $settings->add(new admin_setting_configcolourpicker(
+        'block_course_overview/coursewithoverviewscolor', 
+        new lang_string('coursewithoverviewscolor', 'block_course_overview'), 
+        null, 
+        '#fcf8e3'));
 }

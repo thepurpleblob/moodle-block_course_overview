@@ -37,4 +37,5 @@ if ($activetab == 'courses') {
     block_course_overview_update_sortorder(0);
 } else if ($activetab == "favourites") {
     block_course_overview_update_favourites($sortorder);
+    block_course_overview_update_sortorder(0);
 }
