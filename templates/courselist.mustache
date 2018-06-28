@@ -30,7 +30,7 @@
         {{# hasoverviews }}
         <div id="course-{{ id }}" style="background-color: {{coursewithoverviewscolor}};" class="row courseovbox lead">
         {{/ hasoverviews }}
-            <div class="col-sm-1 span1">
+            <div class="col-sm-1 span1 courseoverview-star">
                 {{# isediting }}
                     <i class="icon fa fa-fw fa-arrows cursor" title="{{# str }}movecourse, block_course_overview, {{ fullname }}{{/ str }}"></i>
                 {{/ isediting }}
@@ -40,17 +40,17 @@
                     </a>
                 {{/ isediting }}
             </div>
-            <div class="col-sm-11">
+            <div class="col-sm-11 courseoverview-block">
                 {{^ hasoverviews }}
-                    <div class="col-md-12 span12">
+                    <div class="col-md-12 span12 courseoverview-title">
                         <strong><a {{^ visible }}class="dimmed"{{/ visible }} href="{{ link }}">{{ fullname }}</a></strong>
                     </div>
                 {{/ hasoverviews }}
                 {{# hasoverviews }}
-                    <div class="col-md-8 span8">
+                    <div class="col-md-8 span8 courseoverview-title">
                         <strong><a {{^ visible }}class="dimmed"{{/ visible }} href="{{ link }}">{{ fullname }}</a></strong>
                     </div>
-                    <div class="col-md-4 span4">
+                    <div class="col-md-4 span4 courseoverview-overviews">
                         {{# overviews }}
                              <span class="overview-icon" data-id="#{{ overviewid }}">
                                  {{{ icon }}}
@@ -58,7 +58,7 @@
                         {{/ overviews }}
                     </div>
                 {{/ hasoverviews }}
-                <div class="col-xs-12">
+                <div class="col-xs-12 courseoverview-category">
                     <small>{{ categories }}</small>
                 </div>
             </div>

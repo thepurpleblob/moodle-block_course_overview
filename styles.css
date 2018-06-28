@@ -32,6 +32,7 @@
     top:8px;
     right:8px;
     content: "\f00d ";
+    line-height: 2rem;
 }
 
 .dialogue h3 {
@@ -66,7 +67,7 @@ div.courseovbox.ui-sortable-handle{
     height: 25px;
     position: absolute;
     top: 8px;
-    right: 13px;
+    right: 17px;
 }
 .course-overview-dialog .ui-dialog-titlebar-close::after{
     top: 1px;
