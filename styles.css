@@ -81,8 +81,8 @@ div.courseovbox.ui-sortable-handle{
     background-image:none;
     height: 25px;
     position: absolute;
-    top: 0px;
-    right: 17px;
+    top: 5px;
+    right: 20px;
 }
 .course-overview-dialog .ui-dialog-titlebar-close::after{
     top: 1px;
