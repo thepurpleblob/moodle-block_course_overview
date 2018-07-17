@@ -36,17 +36,18 @@
 
 .course-overview-dialog .ui-widget-header {
     background: none !important;
-    margin-bottom: 0 !important; 
+    margin-bottom: 0 !important;
+    line-height: .5rem !important;
 }
 
 .course-overview-dialog .ui-dialog-titlebar-close:after {
-    position: absolute;
-    font-family: FontAwesome;
-    font-size: 2.0em;
-    top:8px;
-    right:8px;
     content: "\f00d ";
     line-height: 2rem;
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 2em;
+    top: 1px !important;
+    right: 4px !important;
 }
 
 .dialogue h3 {
