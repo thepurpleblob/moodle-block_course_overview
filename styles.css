@@ -18,11 +18,24 @@
     padding: 20px;
     border: 1px solid #d3d8dc;
     z-index: 9999 !important;
-    box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.5);
 }
 
 .course-overview-dialog .ui-dialog-titlebar-close {
     border: 0;
+}
+
+.ui-widget-overlay{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: black;
+    position: fixed;
+    opacity: 0.7;
+}
+
+.course-overview-dialog .ui-widget-header {
+    background: none !important;
+    margin-bottom: 0 !important; 
 }
 
 .course-overview-dialog .ui-dialog-titlebar-close:after {

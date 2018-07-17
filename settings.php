@@ -26,6 +26,17 @@ defined('MOODLE_INTERNAL') || die;
 require_once(dirname(__FILE__) . '/locallib.php');
 
 if ($ADMIN->fulltree) {
+    
+    
+    $options = [
+        BLOCKS_COURSE_OVERVIEW_FAVOURITE_VIEW => get_string('favourites', 'block_course_overview'),
+        BLOCKS_COURSE_OVERVIEW_AUTOMATIC_VIEW => get_string('automaticSetting', 'block_course_overview')
+    ];
+    $settings->add(new admin_setting_configselect('block_course_overview/defaulttab',
+        get_string('defaulttab', 'block_course_overview'),
+        get_string('defaulttab_desc', 'block_course_overview'), 'favourites', $options));
+    
+    
     $showcategories = array(
         BLOCKS_COURSE_OVERVIEW_SHOWCATEGORIES_NONE => new lang_string('none', 'block_course_overview'),
         BLOCKS_COURSE_OVERVIEW_SHOWCATEGORIES_ONLY_PARENT_NAME => new lang_string('onlyparentname', 'block_course_overview'),
