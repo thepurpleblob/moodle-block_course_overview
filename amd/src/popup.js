@@ -31,7 +31,7 @@ define(['jquery', 'jqueryui', 'core/config'], function($, UI, mdlconfig) {
             // Dialogues on activity icons.
             $(".dialogue").dialog({
                 autoOpen: false,
-                minWidth: 400,
+                minWidth: 500,
                 classes: {
                     'ui-dialog': 'course-overview-dialog'
                 },
