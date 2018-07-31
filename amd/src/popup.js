@@ -36,19 +36,30 @@ define(['jquery', 'jqueryui', 'core/config'], function($, UI, mdlconfig) {
                     'ui-dialog': 'course-overview-dialog'
                 },
                 closeText: '',
-                modal: true
+                modal: true,
+                show: {
+                  effect: 'fade',
+                  duration: 250,
+                },
+                hide: {
+                  effect: 'fade',
+                  duration: 250
+                }
             });
 
             // Opens the appropriate dialog.
             $(".overview-icon").click(function () {
 
-                console.log(this);
-
                 // Takes the ID of appropriate dialogue.
                 var id = $(this).data('id');
-console.log($(id));
+                
                 // Open dialogue.
                 $(id).dialog("open");
+                
+                // On click overlay close dialog
+                jQuery('.ui-widget-overlay').on('click', function() {
+                    $(id).dialog('close');
+                });
             });
 
         }
