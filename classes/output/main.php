@@ -90,7 +90,7 @@ class main implements renderable, templatable {
             $course->customnotificationinstalled = $customnotificationinstalled;
             $course->notificationsenabled = 0;
             if($customnotificationinstalled && \local_custom_notification\UserCoursesNotification::get($course->id, $USER->id)){
-                $course->notificationsenabled == 1;
+                $course->notificationsenabled = 1;
             }
             /**
              * Other course settings
