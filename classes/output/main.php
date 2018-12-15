@@ -77,9 +77,24 @@ class main implements renderable, templatable {
      */
     private function process_tab($output, $favtab, $tab) {
         
+        global $USER;
+        
         // Add extra info (and make zero indexed).
         $courselist = [];
+        $customnotificationinstalled = class_exists('\\local_custom_notification\\UserCoursesNotification');
         foreach ($tab->sortedcourses as $course) {
+            /**
+             * Check if Custom Notification plugin is installed, 
+             * and if user has enabled notifications
+             */
+            $course->customnotificationinstalled = $customnotificationinstalled;
+            $course->notificationsenabled = 0;
+            if($customnotificationinstalled && \local_custom_notification\UserCoursesNotification::get($course->id, $USER->id)){
+                $course->notificationsenabled == 1;
+            }
+            /**
+             * Other course settings
+             */
             $course->link = new \moodle_url('/course/view.php', array('id' => $course->id));
             $course->categories = implode(' / ', $this->categories($course->category));
             if (in_array($course->id, $this->favourites)) {
