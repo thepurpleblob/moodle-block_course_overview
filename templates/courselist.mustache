@@ -66,8 +66,8 @@
                 {{# customnotificationinstalled }}
                     <div class="col-xs-4 courseoverview-notification" style="font-size: 11pt;">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{ notificationsenabled }}" id="notificationcheckbox">
-                            <label class="form-check-label" for="notificationcheckbox">
+                            <input class="form-check-input notificationcheckbox" type="checkbox" courseid="{{ id }}" userid="{{ userid }}" {{ checkboxchecked }} id="notificationcheckbox{{ id }}">
+                            <label class="form-check-label" for="notificationcheckbox{{id}}">
                                 Notifications
                             </label>
                         </div>

@@ -88,9 +88,10 @@ class main implements renderable, templatable {
              * and if user has enabled notifications
              */
             $course->customnotificationinstalled = $customnotificationinstalled;
-            $course->notificationsenabled = 0;
+            $course->checkboxchecked = '';
+            $course->userid = $USER->id;
             if($customnotificationinstalled && \local_custom_notification\UserCoursesNotification::get($course->id, $USER->id)){
-                $course->notificationsenabled = 1;
+                $course->checkboxchecked = 'checked';
             }
             /**
              * Other course settings
