@@ -62,6 +62,20 @@ define(['jquery', 'jqueryui', 'core/config'], function($, UI, mdlconfig) {
                 });
             });
 
+            // When checkbox is clicked, change state of notification.
+            $(".notificationcheckbox").change(function (ev) {
+
+                var userid = ev.target.getAttribute("userid");
+                var courseid = ev.target.getAttribute("courseid");
+                var checkboxid = ev.target.getAttribute("id");
+                var checked = ev.target.checked;
+                
+                var params = 'userid=' + userid + '&courseid=' + courseid + '&checked=' + checked;
+                
+                $.get('../local/custom_notification/api/setcoursenotification.php?' + params);
+
+            });
+
         }
     };
 });
