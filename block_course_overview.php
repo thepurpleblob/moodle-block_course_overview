@@ -131,7 +131,8 @@ class block_course_overview extends block_base {
         $renderer = $this->page->get_renderer('block_course_overview');
 
         // Render block.
-        $main = new block_course_overview\output\main($config, $tabs, $isediting, $tab, $sortorder, $favourites, $usersetmaxcourses);
+        $main = new block_course_overview\output\main(
+            $config, $tabs, $isediting, $tab, $sortorder, $favourites, $usersetmaxcourses);
         $this->content->text .= $renderer->render($main);
         return $this->content;
     }
@@ -167,7 +168,7 @@ class block_course_overview extends block_base {
      * Do any additional initialization you may need at the time a new block instance is created
      * @return boolean
      */
-    function instance_create() {
+    public function instance_create() {
         global $DB;
 
         // Bodge? Modify our own instance to make the default region the

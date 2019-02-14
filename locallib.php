@@ -196,7 +196,7 @@ function block_course_overview_get_usersetmaxcourses() {
 function block_course_overview_get_sorted_courses($favourites, $keepfavourites = false, $exclude = []) {
     global $USER;
 
-    // Bodge... don't regenerate course list
+    // Bodge... don't regenerate course list.
     static $courses = [];
 
     $sortorder = block_course_overview_get_sortorder();
@@ -294,7 +294,7 @@ function block_course_overview_get_sorted_courses($favourites, $keepfavourites =
         }
     }
 
-    // Implement pagination
+    // Implement pagination.
     $maxcourses = block_course_overview_get_usersetmaxcourses();
     if ($favourites) {
         $page = optional_param('ssf_pagenum', 0, PARAM_INT);
@@ -302,7 +302,7 @@ function block_course_overview_get_sorted_courses($favourites, $keepfavourites =
         $page = optional_param('ssc_pagenum', 0, PARAM_INT);
     }
     $page = $page <= 0 ? 0 : $page;
-    $first = $page*$maxcourses;
+    $first = $page * $maxcourses;
     $sortedcoursessliced = array_slice($sortedcourses, $first, $maxcourses, true);
     return array($sortedcoursessliced, $sitecourses, count($sortedcourses));
 }

@@ -209,7 +209,7 @@ class main implements renderable, templatable {
      */
     public function export_for_template(renderer_base $output) {
 
-        // Implement pagination
+        // Implement pagination.
         $maxcourses = block_course_overview_get_usersetmaxcourses();
         $currpagef = optional_param('ssf_pagenum', 0, PARAM_INT);
         $currpagec = optional_param('ssc_pagenum', 0, PARAM_INT);
@@ -217,24 +217,24 @@ class main implements renderable, templatable {
         $numfavpages = $numfavpages <= 0 ? 0 : $numfavpages;
         $numcoursepages = (int)ceil($this->tabs['courses']->totalcourses / $maxcourses) - 1;
         $numcoursepages = $numcoursepages <= 0 ? 0 : $numcoursepages;
-        $nextpagef = $currpagef +1;
-        $nextpagec = $currpagec +1;
-        $prevpagef = $currpagef -1;
-        $prevpagec = $currpagec -1;
+        $nextpagef = $currpagef + 1;
+        $nextpagec = $currpagec + 1;
+        $prevpagef = $currpagef - 1;
+        $prevpagec = $currpagec - 1;
 
         $favpages = range(0, $numfavpages);
-        foreach($favpages as $k => $v) {
+        foreach ($favpages as $k => $v) {
             $favpages[$k] = [
                 "pagelink" => new \moodle_url('/my/index.php', ['ssf_pagenum' => $v]),
-                "pagetext" => $v+1,
+                "pagetext" => $v + 1,
                 "current" => ($v == $currpagef),
             ];
         }
         $coursepages = range(0, $numcoursepages);
-        foreach($coursepages as $k => $v) {
+        foreach ($coursepages as $k => $v) {
             $coursepages[$k] = [
                 "pagelink" => new \moodle_url('/my/index.php', ['ssc_pagenum' => $v]),
-                "pagetext" => $v+1,
+                "pagetext" => $v + 1,
                 "current" => ($v == $currpagec),
             ];
         }
