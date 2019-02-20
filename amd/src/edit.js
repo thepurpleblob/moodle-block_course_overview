@@ -28,9 +28,6 @@ define(['jquery', 'jqueryui'], function($, UI) {
     return {
         init: function() {
 
-            // Change non-js links to be inactive.
-            $(".courseovbox a").removeAttr("href");
-
             // Make the course list sort.
             $(".tab-pane .course-list").sortable({
                 update: function(event, ui) {
@@ -52,7 +49,9 @@ define(['jquery', 'jqueryui'], function($, UI) {
                         M.cfg.wwwroot + '/blocks/course_overview/save.php',
                         data
                     );
-                }
+                },
+                axis: "y",
+                handle: ".fa-arrows"
             });
         }
     };

@@ -87,3 +87,8 @@ div.courseovbox {
 .block-course-overview .tab-content {
     overflow: hidden;
 }
+
+/* Hover vertical drag cursor. */
+.course-list i.fa-arrows:hover {
+    cursor: ns-resize;
+}
