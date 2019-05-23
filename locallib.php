@@ -24,6 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once($CFG->libdir . '/externallib.php');
+
 define('BLOCKS_COURSE_OVERVIEW_SHOWCATEGORIES_NONE', '0');
 define('BLOCKS_COURSE_OVERVIEW_SHOWCATEGORIES_ONLY_PARENT_NAME', '1');
 define('BLOCKS_COURSE_OVERVIEW_SHOWCATEGORIES_FULL_PATH', '2');
@@ -217,6 +219,9 @@ function block_course_overview_get_sorted_courses($favourites, $keepfavourites =
             $sort = 'visible DESC,sortorder ASC';
         }
         $courses = enrol_get_my_courses(null, $sort);
+        foreach ($courses as $course) {
+            $course->fullname = external_format_string($course->fullname, \context_course::instance($course->id));
+        }
         $site = get_site();
 
         if (array_key_exists($site->id, $courses)) {
