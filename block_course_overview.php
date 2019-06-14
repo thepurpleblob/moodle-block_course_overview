@@ -52,6 +52,7 @@ class block_course_overview extends block_base {
         global $USER, $CFG, $DB, $SESSION;
 
         require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
+        require_once($CFG->dirroot.'/lib/coursecatlib.php');
         require_once($CFG->dirroot.'/user/profile/lib.php');
 
         if ($this->content !== null) {
