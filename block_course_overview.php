@@ -121,6 +121,7 @@ class block_course_overview extends block_base {
         $tabs = array(
             'favourites' => $ftab,
             'courses' => $ctab,
+            'recentlyaccessed' => $rtab
         );
 
         // Get list of favourites.
