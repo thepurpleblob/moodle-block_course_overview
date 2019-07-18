@@ -23,7 +23,7 @@
     {}
 }}
 
-<div id="block-course-overview-{{uniqid}}" class="block-course-overview" data-region="course-overview" data-userid="{{userid}}">
+<div id="block-course-overview-{{uniqid}}" class="block-course-overview" data-region="course-overview">
 
     {{# isediting }}
         <div class="alert alert-secondary">
@@ -97,20 +97,5 @@
     {{/ js }}
 {{/ isediting }}
 
-{{#js}}
-require(
-[
-    'jquery',
-    'block_course_overview/recentlyaccessed'
-],
-function(
-    $,
-    Main
-) {
-    var root = $('#block-course-overview-{{uniqid}}');
-    var userid = root.attr('data-userid');
 
-    Main.init(userid, root);
-});
-{{/js}}
 

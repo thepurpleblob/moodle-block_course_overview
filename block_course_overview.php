@@ -110,7 +110,7 @@ class block_course_overview extends block_base {
         $rtab = new stdClass;
         $rtab->tab = 'recentlyaccessed';
         list($rtab->sortedcourses, $rtab->totalcourses)
-            = block_course_overview_get_sorted_courses($courses_sortorder['courses'], $courses_sortorder['sortorder'], false, $config->keepfavourites, array_keys($ftab->sortedcourses));
+            = block_course_overview_get_recent_courses($USER->id, 10);
         /**
          * Show icons in course tab
          */
