@@ -283,7 +283,9 @@ function block_course_overview_get_sorted_courses($courses, $sortorder, $favouri
             }
         }
     }
+    echo '<br><br>';
     var_dump($sortedcourses);
+    echo '<br><br>';
     return array($sortedcourses, count($sortedcourses));
 }
 

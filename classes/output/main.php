@@ -209,6 +209,12 @@ class main implements renderable, templatable {
                 'show' => $this->selectedtab == 'courses' ? 'show active' : '',
                 'data' => $this->process_tab($output, false, $this->tabs['courses']),
                 ],
+            2 => (object) [
+                'tab' => 'recentlyaccessed',
+                'isFavouritesTab' => false,
+                'show' => $this->selectedtab == 'recentlyaccessed' ? 'show active' : '',
+                'data' => $this->process_tab($output, false, $this->tabs['recentlyaccessed']),
+                ]
         );
 
         return [
