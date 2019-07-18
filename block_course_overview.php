@@ -107,6 +107,10 @@ class block_course_overview extends block_base {
         $ctab->tab = 'courses';
         list($ctab->sortedcourses, $ctab->totalcourses)
             = block_course_overview_get_sorted_courses($courses_sortorder['courses'], $courses_sortorder['sortorder'], false, $config->keepfavourites, array_keys($ftab->sortedcourses));
+        $rtab = new stdClass;
+        $rtab->tab = 'recentlyaccessed';
+        list($rtab->sortedcourses, $rtab->totalcourses)
+            = block_course_overview_get_sorted_courses($courses_sortorder['courses'], $courses_sortorder['sortorder'], false, $config->keepfavourites, array_keys($ftab->sortedcourses));
         /**
          * Show icons in course tab
          */
