@@ -60,3 +60,4 @@ $string['title'] = 'Vue d\'ensemble des cours (legacy)';
 $string['unfavourite'] = 'Supprimer le favoris';
 $string['coursesTabName'] = 'Mes cours';
 $string['favouritesTabName'] = 'Favoris';
+$string['recentlyaccessedTabName'] = 'Recently Accessed';

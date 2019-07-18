@@ -60,6 +60,7 @@ $string['title'] = 'Course overview (legacy)';
 $string['unfavourite'] = 'Remove favourite';
 $string['coursesTabName'] = 'My Courses';
 $string['favouritesTabName'] = 'Favourites';
+$string['recentlyaccessedTabName'] = 'Recently Accessed';
 $string['automaticSetting'] = 'Automatic';
 $string['defaulttab'] = 'Default tab';
 $string['defaulttab_desc'] = 'The tab that will be displayed when a user first views their course overview.';
