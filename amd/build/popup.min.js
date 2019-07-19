@@ -81,10 +81,8 @@ define(['jquery', 'jqueryui', 'core/config'], function($, UI, mdlconfig) {
 
                 var tab_selected = ev.target.getAttribute('href');
                 tab_selected = tab_selected.substring(1, tab_selected.length);
-                console.log(tab_selected);
                 
                 var params = 'tab_selected=' + tab_selected;
-                console.log(params);
                 $.get('../blocks/course_overview/api/setdefaulttab.php?' + params);
 
             });
