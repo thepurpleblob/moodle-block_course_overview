@@ -222,6 +222,8 @@ class main implements renderable, templatable {
             'isediting' => $this->isediting,
             'help' => $output->help_icon('help', 'block_course_overview', true),
             'viewingfavourites' => $this->selectedtab == 'favourites',
+            'viewingcourses' => $this->selectedtab == 'courses',
+            'viewingrecentlyaccessed' => $this->selectedtab == 'recentlyaccessed',
             'select' => $this->reorder_select($output),
             'coursewithoverviewscolor' => $this->config->coursewithoverviewscolor
         ];

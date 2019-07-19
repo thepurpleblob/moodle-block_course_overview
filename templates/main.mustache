@@ -38,12 +38,12 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link courseoverview-tab {{^ viewingfavourites }}active{{/ viewingfavourites }}" href="#courses" role="tab" data-toggle="tab" data-tabname="courses">
+            <a class="nav-link courseoverview-tab {{# viewingcourses }}active{{/ viewingcourses }}" href="#courses" role="tab" data-toggle="tab" data-tabname="courses">
                 {{# str }}coursesTabName, block_course_overview{{/ str }}
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link courseoverview-tab {{^ viewingfavourites }}active{{/ viewingfavourites }}" href="#recentlyaccessed" role="tab" data-toggle="tab" data-tabname="recentlyaccessed">
+            <a class="nav-link courseoverview-tab {{# viewingrecentlyaccessed }}active{{/ viewingrecentlyaccessed }}" href="#recentlyaccessed" role="tab" data-toggle="tab" data-tabname="recentlyaccessed">
                 {{# str }}recentlyaccessedTabName, block_course_overview{{/ str }}
             </a>
         </li>
