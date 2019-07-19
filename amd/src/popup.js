@@ -83,6 +83,7 @@ define(['jquery', 'jqueryui', 'core/config'], function($, UI, mdlconfig) {
                 console.log(tab_selected);
                 
                 var params = 'tab_selected=' + tab_selected;
+                console.log(tab_selected);
                 $.get('../blocks/course_overview/api/setdefaulttab.php?' + params);
 
             });
