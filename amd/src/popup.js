@@ -76,6 +76,23 @@ define(['jquery', 'jqueryui', 'core/config'], function($, UI, mdlconfig) {
 
             });
 
+            // When tab change, save it to profile information.
+            $(".courseoverview-tab").click(function (el, ev) {
+
+                console.log(el);
+                console.log(ev);
+
+//                var userid = ev.target.getAttribute("userid");
+//                var courseid = ev.target.getAttribute("courseid");
+//                var checkboxid = ev.target.getAttribute("id");
+//                var checked = ev.target.checked;
+//                
+//                var params = 'userid=' + userid + '&courseid=' + courseid + '&checked=' + checked;
+//                
+//                $.get('../local/custom_notification/api/setcoursenotification.php?' + params);
+
+            });
+
         }
     };
 });

@@ -43,12 +43,12 @@
             <div class="col-sm-11 courseoverview-block">
                 {{^ hasoverviews }}
                     <div class="col-md-12 span12 courseoverview-title">
-                        <strong><a {{^ visible }}class="dimmed"{{/ visible }} href="{{ link }}">{{ fullname }}</a></strong>
+                        <strong><a href="{{ link }}">{{ fullname }}</a></strong>
                     </div>
                 {{/ hasoverviews }}
                 {{# hasoverviews }}
                     <div class="col-md-8 span8 courseoverview-title">
-                        <strong><a {{^ visible }}class="dimmed"{{/ visible }} href="{{ link }}">{{ fullname }}</a></strong>
+                        <strong><a href="{{ link }}">{{ fullname }}</a></strong>
                     </div>
                     <div class="col-md-4 span4 courseoverview-overviews">
                         {{# overviews }}

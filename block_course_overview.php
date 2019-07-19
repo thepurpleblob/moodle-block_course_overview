@@ -130,6 +130,9 @@ class block_course_overview extends block_base {
         $favourites = array_keys($ftab->sortedcourses);
 
         // Default tab. One with something in it or favourites.
+        echo '<br><br>';
+        echo 'Last tab: ';
+        echo '<br><br>';
         if ($ftab->totalcourses || $config->defaulttab == BLOCKS_COURSE_OVERVIEW_FAVOURITE_VIEW) {
             $tab = 'favourites';
         } else {
