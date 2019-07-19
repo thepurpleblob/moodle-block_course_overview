@@ -27,6 +27,7 @@ require(dirname(__FILE__) . '/../../../config.php');
 global $USER;
 
 $tab_selected = (isset($_GET["tab_selected"])) ? $_GET["tab_selected"] : null;
+var_dump($tab_selected);
 
 if (isloggedin() && $tab_selected != null) {
     set_user_preference('courseoverview_defaulttab', $tab_selected);
