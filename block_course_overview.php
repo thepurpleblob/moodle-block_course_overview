@@ -131,9 +131,6 @@ class block_course_overview extends block_base {
 
         // Default tab. One with something in it or favourites.
         $lasttabselected = get_user_preferences('courseoverview_defaulttab', 'courses');
-        echo '<br><br>';
-        echo 'Last tab: ' . $lasttabselected;
-        echo '<br><br>';
 //        if ($ftab->totalcourses || $config->defaulttab == BLOCKS_COURSE_OVERVIEW_FAVOURITE_VIEW) {
         if($lasttabselected  == 'favourites'){
             $tab = 'favourites';
