@@ -130,13 +130,17 @@ class block_course_overview extends block_base {
         $favourites = array_keys($ftab->sortedcourses);
 
         // Default tab. One with something in it or favourites.
+        $lasttabselected = get_user_preferences('courseoverview_defaulttab', '#courses');
         echo '<br><br>';
-        echo 'Last tab: ' . get_user_preferences('courseoverview_defaulttab', '#favourites');
+        echo 'Last tab: ' . $lasttabselected;
         echo '<br><br>';
-        if ($ftab->totalcourses || $config->defaulttab == BLOCKS_COURSE_OVERVIEW_FAVOURITE_VIEW) {
+//        if ($ftab->totalcourses || $config->defaulttab == BLOCKS_COURSE_OVERVIEW_FAVOURITE_VIEW) {
+        if($lasttabselected  == '#favourites'){
             $tab = 'favourites';
-        } else {
+        } else if($lasttabselected  == '#courses') {
             $tab = 'courses';
+        } else{
+            $tab = 'recentlyaccessed';
         }
 
         $renderer = $this->page->get_renderer('block_course_overview');
