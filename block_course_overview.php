@@ -116,7 +116,7 @@ class block_course_overview extends block_base {
         $rtab->tab = 'recentlyaccessed';
         $recentlyaccessedcourselimit = intval($config->recentlyaccessedcourselimit);
         list($rtab->sortedcourses, $rtab->totalcourses)
-            = block_course_overview_get_recent_courses($USER->id, 10);
+            = block_course_overview_get_recent_courses($USER->id, $recentlyaccessedcourselimit);
         /**
          * Show icons in course tab
          */
