@@ -60,4 +60,6 @@ $string['title'] = 'Panoramica corsi (legacy)';
 $string['unfavourite'] = 'Rimuovi preferito';
 $string['coursesTabName'] = 'I miei corsi';
 $string['favouritesTabName'] = 'Preferiti';
-$string['recentlyaccessedTabName'] = 'Recently Accessed';
+$string['recentlyaccessedTabName'] = 'Visitati recentemente';
+$string['recentlyaccessedcourselimit'] = 'Recently accessed course limit';
+$string['recentlyaccessedcourselimitdesc'] = 'The number of course to show in "recently accessed course" tab.';

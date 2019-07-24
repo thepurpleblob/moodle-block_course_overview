@@ -60,5 +60,6 @@ $string['title'] = 'Kursübersicht (legacy)';
 $string['unfavourite'] = 'Favoriten entfernen';
 $string['coursesTabName'] = 'Meine Kurse';
 $string['favouritesTabName'] = 'Favoriten';
-$string['recentlyaccessedTabName'] = 'Recently Accessed';
-
+$string['recentlyaccessedTabName'] = 'Zuletzt besuchte';
+$string['recentlyaccessedcourselimit'] = 'Recently accessed course limit';
+$string['recentlyaccessedcourselimitdesc'] = 'The number of course to show in "recently accessed course" tab.';

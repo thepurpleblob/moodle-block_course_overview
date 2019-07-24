@@ -60,4 +60,6 @@ $string['title'] = 'Vue d\'ensemble des cours (legacy)';
 $string['unfavourite'] = 'Supprimer le favoris';
 $string['coursesTabName'] = 'Mes cours';
 $string['favouritesTabName'] = 'Favoris';
-$string['recentlyaccessedTabName'] = 'Recently Accessed';
+$string['recentlyaccessedTabName'] = 'Consultés récemment';
+$string['recentlyaccessedcourselimit'] = 'Recently accessed course limit';
+$string['recentlyaccessedcourselimitdesc'] = 'The number of course to show in "recently accessed course" tab.';
