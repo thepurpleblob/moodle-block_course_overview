@@ -102,15 +102,19 @@ class block_course_overview extends block_base {
         // Get data for favourites and course tab.
         $tabs = array();
         $ftab = new stdClass;
+        
         $ftab->tab = 'favourites';
         list($ftab->sortedcourses, $ftab->totalcourses) = block_course_overview_get_sorted_courses($courses_sortorder['courses'], $courses_sortorder['sortorder'], true);
         $ftab->overviews = block_course_overview_get_overviews($ftab->sortedcourses);
         $ctab = new stdClass;
+        
         $ctab->tab = 'courses';
         list($ctab->sortedcourses, $ctab->totalcourses)
             = block_course_overview_get_sorted_courses($courses_sortorder['courses'], $courses_sortorder['sortorder'], false, $config->keepfavourites, array_keys($ftab->sortedcourses));
         $rtab = new stdClass;
+        
         $rtab->tab = 'recentlyaccessed';
+        $recentlyaccessedcourselimit = intval($config->recentlyaccessedcourselimit);
         list($rtab->sortedcourses, $rtab->totalcourses)
             = block_course_overview_get_recent_courses($USER->id, 10);
         /**

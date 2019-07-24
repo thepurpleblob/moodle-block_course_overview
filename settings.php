@@ -32,9 +32,9 @@ if ($ADMIN->fulltree) {
         BLOCKS_COURSE_OVERVIEW_FAVOURITE_VIEW => get_string('favourites', 'block_course_overview'),
         BLOCKS_COURSE_OVERVIEW_AUTOMATIC_VIEW => get_string('automaticSetting', 'block_course_overview')
     ];
-    $settings->add(new admin_setting_configselect('block_course_overview/defaulttab',
-        get_string('defaulttab', 'block_course_overview'),
-        get_string('defaulttab_desc', 'block_course_overview'), 'favourites', $options));
+//    $settings->add(new admin_setting_configselect('block_course_overview/defaulttab',
+//        get_string('defaulttab', 'block_course_overview'),
+//        get_string('defaulttab_desc', 'block_course_overview'), 'favourites', $options));
     
     
     $showcategories = array(
@@ -60,6 +60,12 @@ if ($ADMIN->fulltree) {
         new lang_string('showupdatesincourselist', 'block_course_overview'),
         new lang_string('showupdatesincourselistdesc', 'block_course_overview'),
         0
+    ));
+    $settings->add(new admin_setting_configtext(
+        'block_course_overview/recentlyaccessedcourselimit',
+        new lang_string('recentlyaccessedcourselimit', 'block_course_overview'),
+        new lang_string('recentlyaccessedcourselimitdesc', 'block_course_overview'),
+        10
     ));
     $settings->add(new admin_setting_configcolourpicker(
         'block_course_overview/coursewithoverviewscolor', 

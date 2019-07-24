@@ -64,3 +64,5 @@ $string['recentlyaccessedTabName'] = 'Recently Accessed';
 $string['automaticSetting'] = 'Automatic';
 $string['defaulttab'] = 'Default tab';
 $string['defaulttab_desc'] = 'The tab that will be displayed when a user first views their course overview.';
+$string['recentlyaccessedcourselimit'] = 'Recently accessed course limit';
+$string['recentlyaccessedcourselimitdesc'] = 'The number of course to show in "recently accessed course" tab.';
