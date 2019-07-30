@@ -212,6 +212,9 @@ function block_course_overview_get_all_courses(){
 
 function block_course_overview_get_recent_courses($userid, $limit) {
     $recent_courses = course_get_recent_courses($userid, $limit);
+    foreach ($recent_courses as $course) {
+        $course->visible = true;
+    }
     return array($recent_courses, count($recent_courses));
 }
 
