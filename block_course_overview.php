@@ -105,7 +105,6 @@ class block_course_overview extends block_base {
         
         $ftab->tab = 'favourites';
         list($ftab->sortedcourses, $ftab->totalcourses) = block_course_overview_get_sorted_courses($courses_sortorder['courses'], $courses_sortorder['sortorder'], true);
-//        $ftab->overviews = block_course_overview_get_overviews($ftab->sortedcourses);
         $ctab = new stdClass;
         
         $ctab->tab = 'courses';
@@ -117,13 +116,6 @@ class block_course_overview extends block_base {
         $recentlyaccessedcourselimit = intval($config->recentlyaccessedcourselimit);
         list($rtab->sortedcourses, $rtab->totalcourses)
             = block_course_overview_get_recent_courses($USER->id, $recentlyaccessedcourselimit);
-        /**
-         * Show icons in course tab
-         */
-//        if(isset($config->showupdatesincourselist) && intval($config->showupdatesincourselist))
-//            $ctab->overviews = block_course_overview_get_overviews($ctab->sortedcourses);
-//        else
-//            $ctab->overviews = $ftab->overviews;
         $tabs = array(
             'favourites' => $ftab,
             'courses' => $ctab,

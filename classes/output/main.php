@@ -106,28 +106,7 @@ class main implements renderable, templatable {
                 $course->favouritelink = new \moodle_url('/my', array('favourite' => $course->id));
                 $course->favouriteicon = 'fa-star-o';
                 $course->favouritealt = get_string('makefavourite', 'block_course_overview');
-            }            
-//            if (!empty($tab->overviews[$course->id])) {
-//                $course->hasoverviews = true;
-//                $overviews = array();
-//                foreach ($tab->overviews[$course->id] as $activity => $overviewtext) {
-//                    $overview = new \stdClass;
-//                    $overview->coursename = $course->fullname;
-//                    $overview->visible = $course->visible;
-//                    $overview->activity = $activity;
-//                    $overview->text = str_replace('p-y-1', '', $overviewtext);
-//                    $description = get_string('activityoverview', 'block_course_overview',
-//                        get_string('pluginname', 'mod_' . $activity));
-//                    $overviewid = $activity . '_' . $course->id;
-//                    $overview->overviewid = $overviewid;
-//                    $overview->icon = $output->pix_icon('icon', $description, 'mod_' . $activity);
-//                    $overviews[] = $overview;
-//                }
-//                $course->overviews = $overviews;
-//            } else {
-//                $course->hasoverviews = false;
-//            }
-            $course->hasoverviews = false;
+            }
             $courselist[] = $course;
         }
 
@@ -225,8 +204,7 @@ class main implements renderable, templatable {
             'viewingfavourites' => $this->selectedtab == 'favourites',
             'viewingcourses' => $this->selectedtab == 'courses',
             'viewingrecentlyaccessed' => $this->selectedtab == 'recentlyaccessed',
-            'select' => $this->reorder_select($output),
-            'coursewithoverviewscolor' => $this->config->coursewithoverviewscolor
+            'select' => $this->reorder_select($output)
         ];
     }
 

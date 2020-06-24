@@ -37,50 +37,6 @@ define('BLOCKS_COURSE_OVERVIEW_REORDER_SHORTNAME', '2');
 define('BLOCKS_COURSE_OVERVIEW_REORDER_ID', '3');
 
 /**
- * Display overview for courses
- *
- * @param array $courses courses for which overview needs to be shown
- * @return array html overview
- */
-function block_course_overview_get_overviews($courses) {
-    global $CFG;
-
-    // Tab may not have any courses.
-    if (!$courses) {
-        return array();
-    }
-
-    /**
-     * TODO: change deprecated function
-     */
-    // Disable debugging mode because all course modules show debugging message in their print_overview.
-    $debugmode = $CFG->debug;
-    $CFG->debug ^= E_DEPRECATED;
-
-    $htmlarray = array();
-
-    if ($modules = get_plugin_list_with_function('mod', 'print_overview')) {
-        // Split courses list into batches with no more than MAX_MODINFO_CACHE_SIZE courses in one batch.
-        // Otherwise we exceed the cache limit in get_fast_modinfo() and rebuild it too often.
-        if (defined('MAX_MODINFO_CACHE_SIZE') && MAX_MODINFO_CACHE_SIZE > 0 && count($courses) > MAX_MODINFO_CACHE_SIZE) {
-            $batches = array_chunk($courses, MAX_MODINFO_CACHE_SIZE, true);
-        } else {
-            $batches = array($courses);
-        }
-        echo '<br><br>';
-        var_dump($modules);
-        foreach ($batches as $courses) {
-            foreach ($modules as $fname) {
-//                var_dump($fname);
-//                $fname($courses, $htmlarray);
-            }
-        }
-    }
-    $CFG->debug = $debugmode;
-    return $htmlarray;
-}
-
-/**
  * Sets user preference for maximum courses to be displayed in course_overview block
  *
  * @param int $number maximum courses which should be visible
