@@ -67,10 +67,12 @@ function block_course_overview_get_overviews($courses) {
         } else {
             $batches = array($courses);
         }
+        echo '<br><br>';
+        var_dump($modules);
         foreach ($batches as $courses) {
             foreach ($modules as $fname) {
 //                var_dump($fname);
-                $fname($courses, $htmlarray);
+//                $fname($courses, $htmlarray);
             }
         }
     }
